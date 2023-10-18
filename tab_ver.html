@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/tab_icon.png">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+
+    <title>Youtube Embed Player</title>
+</head>
+
+<body>
+    <main>
+        <a class="switchVer" href="loc_ver.html">In Page Version Here!</a>
+
+        <h1>Enter youtube embed code</h1>
+        <form id="myForm" autocomplete="off">
+            <input type="text" id="inputData" name="inputData">
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <script>
+        //when embed code is entered, video will open in a new tab.
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            // Prevent the form from submitting in the current tab
+            event.preventDefault();
+
+            const data = document.getElementById("inputData").value;
+
+            if (data) {
+                // Create a new tab/window with the collected data
+                const newTab = window.open("", "_blank");
+                newTab.document.write('<html><head><link rel="stylesheet" type="text/css" href="styles.css"></head>' + data + '</html>');
+                newTab.document.close();
+
+                newTab.document.title = "Youtube Video";
+            }
+        });
+    </script>
+</body>
+
+</html>

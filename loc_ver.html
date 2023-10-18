@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/tab_icon.png">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+
+    <title>Youtube Embed Player</title>
+</head>
+
+<body>
+    <main>
+        <a class="switchVer" href="tab_ver.html">Tab Version Here!</a>
+
+        <h1>Enter youtube embed code</h1>
+
+        <!-- embed submit form -->
+        <form id="myForm" autocomplete="off">
+            <input type="text" id="inputData" name="inputData">
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- YT video iframe -->
+        <iframe width="560" height="315" id="videoFrame" src="#" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </main>
+
+    <script>
+        //when embed code is entered, video will open in the same tab.
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            // Prevent the form from submitting in the current tab
+            event.preventDefault();
+
+            const videoFrame = document.getElementById("videoFrame");
+            const data = document.getElementById("inputData").value;
+
+            // Create a temporary element to parse the HTML string
+            const tempElement = document.createElement('div');
+            tempElement.innerHTML = data;
+
+            // Extract the 'src' attribute from the 'iframe' element
+            const iframeElement = tempElement.querySelector('iframe');
+            const ytlink = iframeElement.getAttribute('src');
+            console.log(ytlink);
+
+            if (data) {
+                videoFrame.src = ytlink;
+                videoFrame.style.display = "block";
+                console.log(videoFrame.src);
+            }
+        });
+    </script>
+</body>
+
+</html>

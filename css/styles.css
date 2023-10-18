@@ -1,0 +1,84 @@
+* {
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    font-family: inherit;
+    background-color: #282828;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2em;
+    color: white;
+}
+
+.switchVer{
+align-self: flex-end;
+padding: 1em;
+}
+
+main {
+    /* flexbox properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    margin: auto;
+    background-color: #141414;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 2em 7em;
+    margin-bottom: 4em;
+
+    /* flexbox properties */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 500px;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8em 1.2em;
+    margin-bottom: 1.5em;
+    background-color: #282828;
+    color: white;
+}
+
+button {
+    background-color: #3a015c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:hover {
+    background-color: #290141;
+}
+
+iframe {
+    display: none;
+}
+
+a:link, a:visited {
+    color: darkgreen;
+  }
+    
+  a:hover, a:active {
+    color: rgb(1, 71, 1);
+  }
